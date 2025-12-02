@@ -15,7 +15,15 @@ git clone https://github.com/Feras-Alaqad/training-tasks.git
 ## 2️⃣ Navigate to the project folder
 
 ```bash
+cd training-tasks/<folder name that you want test>
+```
+example :
+```bash
 cd training-tasks/week1
+```
+or
+```bash
+cd training-tasks/week2
 ```
 
 ---
