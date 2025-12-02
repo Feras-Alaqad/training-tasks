@@ -7,7 +7,7 @@ This guide explains how to set up and run the Django REST project after cloning 
 ## 1️⃣ Clone the repository
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/Feras-Alaqad/training-tasks.git
 ```
 
 ---
@@ -15,10 +15,8 @@ git clone <repository-url>
 ## 2️⃣ Navigate to the project folder
 
 ```bash
-cd <repository-folder>/week1
+cd training-tasks/week1
 ```
-
-> Replace `<repository-folder>` with the folder created by git clone.
 
 ---
 
