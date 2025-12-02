@@ -15,9 +15,10 @@ git clone https://github.com/Feras-Alaqad/training-tasks.git
 ## 2️⃣ Navigate to the project folder
 
 ```bash
-cd training-tasks/week1
+cd training-tasks/<folder name that you want test>
 ```
-
+example : cd training-tasks/week1
+       or cd training-tasks/week2
 ---
 
 ## 3️⃣ Create a virtual environment
