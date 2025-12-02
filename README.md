@@ -76,12 +76,7 @@ http://127.0.0.1:8000/
 
 ---
 
-## 8️⃣ Access the endpoints
-
-* `/` → Home page (JSON: "Hello, World!" + personalized name)
-* `/<name>/` → Home page with dynamic name in JSON
-
-## 9️⃣ Notes
+## 8️⃣ Notes
 
 * Always activate the virtual environment before running the server.
 * Any new packages should be added to `requirements.txt` using:
