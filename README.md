@@ -17,8 +17,15 @@ git clone https://github.com/Feras-Alaqad/training-tasks.git
 ```bash
 cd training-tasks/<folder name that you want test>
 ```
-example : cd training-tasks/week1
-       or cd training-tasks/week2
+example :
+```bash
+cd training-tasks/week1
+```
+or
+```bash
+cd training-tasks/week2
+```
+
 ---
 
 ## 3️⃣ Create a virtual environment
@@ -69,12 +76,7 @@ http://127.0.0.1:8000/
 
 ---
 
-## 8️⃣ Access the endpoints
-
-* `/` → Home page (JSON: "Hello, World!" + personalized name)
-* `/<name>/` → Home page with dynamic name in JSON
-
-## 9️⃣ Notes
+## 8️⃣ Notes
 
 * Always activate the virtual environment before running the server.
 * Any new packages should be added to `requirements.txt` using:
