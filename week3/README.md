@@ -47,7 +47,8 @@ Product.objects.all()
 for product in Product.objects.all():
     print(f"Name: {product.name}, Price: {product.price}")
 ```
-**press ENTER**
+
+**PRESS ENTER**
 
 # Exit the shell:
 ```bash
