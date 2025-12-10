@@ -1,46 +1,58 @@
 # 1️⃣ Navigate to the project folder
+```bash
 cd week3/product
-
+```
 # 2️⃣ create and Activate the virtual environment
 
 ## create virtual environment
+```bash
 python -m venv venv
-
+```
 ## Activate virtual environment
 # Windows
+```bash
 venv\Scripts\activate
+```
 # Linux/Mac
+```bash
 source venv/bin/activate
-
+```
 # 3️⃣ Install dependencies (if requirements.txt exists)
+```bash
 pip install -r requirements.txt
-
+```
 # 4️⃣ Create migration files for the new models
+```bash
 python manage.py makemigrations
-
+```
 # 5️⃣ Apply migrations to create database tables
+```bash
 python manage.py migrate
-
+```
 # 6️⃣ Run the seeder to add dummy products
+```bash
 python manage.py seed_products
-
+```
 # 7️⃣ Verify the data (optional)
+```bash
 python manage.py shell
+```
 # Import the Product model and view all products
->>> from api.models import Product
->>> Product.objects.all()
-
+```bash
+from api.models import Product
+Product.objects.all()
+```
 # If you want to see only the name and price, you can loop through the results
-
->>> for product in Product.objects.all():
+```bash
+for product in Product.objects.all():
     print(f"Name: {product.name}, Price: {product.price}")
-
-press ENTER
+```
+**press ENTER**
 
 # Exit the shell:
-
->>> exit()
-
+```bash
+exit()
+```
 ## ✅ CRUD Operations for Products
 
 This section explains how to perform **Create, Read, Update, and Delete (CRUD)** operations on the Product model using Django REST Framework (DRF) with ViewSets.
@@ -149,7 +161,7 @@ or press Ctrl + D
 💡 **Notes:**
 
 - All CRUD endpoints are automatically provided by **DRF ViewSet + Router**.  
-- Seeder ensures 5 dummy products exist in the database before testing CRUD.  
+- Seeder ensures 3 dummy products exist in the database before testing CRUD.  
 - You can test these APIs with **Postman, curl, or any frontend**.
 
 ---
