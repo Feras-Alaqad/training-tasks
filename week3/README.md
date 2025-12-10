@@ -26,5 +26,17 @@ python manage.py seed_products
 
 # 7️⃣ Verify the data (optional)
 python manage.py shell
+# Import the Product model and view all products
 >>> from api.models import Product
 >>> Product.objects.all()
+
+# If you want to see only the name and price, you can loop through the results
+
+>>> for product in Product.objects.all():
+    print(f"Name: {product.name}, Price: {product.price}")
+
+press ENTER
+
+# Exit the shell:
+
+>>> exit()
