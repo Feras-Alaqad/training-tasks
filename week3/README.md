@@ -46,14 +46,14 @@ press ENTER
 This section explains how to perform **Create, Read, Update, and Delete (CRUD)** operations on the Product model using Django REST Framework (DRF) with ViewSets.
 
 ---
-
+```bash
 ### 1️⃣ Create a Product
 
 **Endpoint:** `POST /api/products/`
 
 **Example using curl:**
 
-```bash
+
 curl -X POST http://127.0.0.1:8000/api/products/ \
 -H "Content-Type: application/json" \
 -d '{"name": "Mouse", "price": 25.50}'
