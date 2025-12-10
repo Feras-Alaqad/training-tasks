@@ -94,7 +94,7 @@ Response:
 2️⃣ Read Products
 List all products
 
-Endpoint: GET /api/products/
+Endpoint: `GET /api/products/`
 ```bash
 /api/products/
 ```
@@ -112,7 +112,7 @@ Response:
 ```
 Retrieve a single product
 
-Endpoint: GET /api/products/<id>/
+Endpoint: `GET /api/products/<id>/`
 ```bash
 /api/products/<id>/
 ```
@@ -126,7 +126,7 @@ Response:
 ```
 3️⃣ Update a Product
 
-Endpoint: PUT /api/products/<id>/ or PATCH /api/products/<id>/
+Endpoint: `PUT /api/products/<id>/ or PATCH /api/products/<id>/`
 ```bash
 /api/products/<id>/
 ```
@@ -146,7 +146,7 @@ curl -X PATCH http://127.0.0.1:8000/api/products/1/ \
 ```
 4️⃣ Delete a Product
 
-Endpoint: DELETE /api/products/<id>/
+Endpoint: `DELETE /api/products/<id>/`
 ```bash
 /api/products/<id>/
 ```
