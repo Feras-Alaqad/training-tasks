@@ -41,12 +41,6 @@ Before testing the CRUD operations, you need to start the Django development ser
 python manage.py runserver
 ```
 
-# Product Validation API (Django REST Framework)
-
-هذا المستند يوضح **حالات التحقق (Validation)** الخاصة بـ Product CRUD API، مع توضيح **نوع الريكوست** و **الريسبونز المتوقع** لكل حالة.
-
----
-
 ## Base URL
 
 ```
@@ -182,8 +176,8 @@ PUT /api/products/{id}/
 
 #### 4. Update without changing name (Allowed)
 
-* الاسم لم يتغير
-* لا يوجد تكرار
+* The name not change
+* There is no repeat
 
 ✔ **Request passes successfully**
 
