@@ -1,6 +1,6 @@
 # 1️⃣ Navigate to the project folder
 ```bash
-cd week4/Category
+cd week5/Category
 ```
 # 2️⃣ create and Activate the virtual environment
 
