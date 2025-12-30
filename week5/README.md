@@ -106,7 +106,7 @@ POST /api/products/
 ```
 ---
 
-## 4️3️⃣ Notes
+## 3️⃣ Notes
 
 * Database integrity is enforced using:
 
