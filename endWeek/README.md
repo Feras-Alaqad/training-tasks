@@ -13,7 +13,7 @@ A Django REST Framework API for managing Products, Categories, Suppliers, and Pr
 # 🔐 Authentication
 
 ## 1. Signup
-POST /signup/
+POST api/signup/
 
 
 ### Request
@@ -32,7 +32,7 @@ POST /signup/
 }
 ```
 ## 2. Login (JWT Token)
-POST /token/
+POST api/token/
 
 ### Request
 ```json
@@ -50,7 +50,7 @@ POST /token/
 ```
 
 ## 3. Refresh Token
-POST /token/refresh/
+POST api/token/refresh/
 
 ### Request
 ```json
@@ -65,18 +65,8 @@ POST /token/refresh/
 }
 ```
 ## Suppliers API
-POST /suppliers/
-
-### Request
-```json
-{
-  "name": "Supplier A",
-  "email": "supplier@mail.com"
-}
-```
-## Suppliers API
 # Create Supplier
-POST /suppliers/
+POST api/suppliers/
 
 ### Request
 ```json
@@ -90,7 +80,7 @@ POST /suppliers/
 GET api/suppliers/
 
 # Update Supplier 
-PUT /suppliers/{id}/
+PUT api/suppliers/{id}/
 ### Request
 ```json
 {
