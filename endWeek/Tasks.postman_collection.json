@@ -1,0 +1,808 @@
+{
+  "info": {
+    "_postman_id": "72b48681-02f5-4026-8e18-71efe7721ab3",
+    "name": "Tasks",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "48778915",
+    "_collection_link": "https://go.postman.co/collection/48778915-72b48681-02f5-4026-8e18-71efe7721ab3?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "signup",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "let response = pm.response.json();\r",
+                  "\r",
+                  "if (response.access) {\r",
+                  "    pm.environment.set(\"access_token\", response.access);\r",
+                  "}\r",
+                  "\r",
+                  "if (response.refresh) {\r",
+                  "    pm.environment.set(\"refresh_token\", response.refresh);\r",
+                  "}"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{access_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{url}}/api/signup/",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "api",
+                "signup",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "login",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "let response = pm.response.json();\r",
+                  "\r",
+                  "if (response.access) {\r",
+                  "    pm.environment.set(\"access_token\", response.access);\r",
+                  "}\r",
+                  "\r",
+                  "if (response.refresh) {\r",
+                  "    pm.environment.set(\"refresh_token\", response.refresh);\r",
+                  "}"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"username\": \"ahmad\",\r\n  \"password\": \"123456\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/api/token/",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "api",
+                "token",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "refresh-token",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "let response = pm.response.json();\r",
+                  "\r",
+                  "if (response.access) {\r",
+                  "    pm.environment.set(\"access_token\", response.access);\r",
+                  "}\r",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"refresh\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc3NTg5MzYzNCwiaWF0IjoxNzc1ODA3MjM0LCJqdGkiOiJhZjk0MmI4ZWY5MDk0Yjc3OWUwMzkzNjM5ODU0MWZiMyIsInVzZXJfaWQiOiIzIn0.Vv4MnzzzBTKu05ovuquHn4so2vvsHql_KnlejfMxexs\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/api/token/refresh/",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "api",
+                "token",
+                "refresh",
+                ""
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Suppliers",
+      "item": [
+        {
+          "name": "add-suppliers",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{access_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"Tech Supplier\",\r\n  \"email\": \"tech@gmail.com\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/api/suppliers/",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "api",
+                "suppliers",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "update-supplier-info",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{access_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"Techs Supplier\",\r\n  \"email\": \"tech@gmail.com\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/api/suppliers/2/",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "api",
+                "suppliers",
+                "2",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "all-suppliers",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{access_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{url}}/api/suppliers/",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "api",
+                "suppliers",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "delete-suppliers",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{access_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{url}}/api/suppliers/2/",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "api",
+                "suppliers",
+                "2",
+                ""
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Categories",
+      "item": [
+        {
+          "name": "add-category",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{access_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"Electronics\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/api/categories/",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "api",
+                "categories",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "change-category-name",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{access_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"Electronic\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/api/categories/",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "api",
+                "categories",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "all-categories",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": []
+        },
+        {
+          "name": "delete-category",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{access_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{url}}/api/categories/2/",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "api",
+                "categories",
+                "2",
+                ""
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Product",
+      "item": [
+        {
+          "name": "search-filter-ordering-products",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{access_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{url}}/api/products/",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "api",
+                "products",
+                ""
+              ],
+              "query": [
+                {
+                  "key": "search",
+                  "value": "jawa",
+                  "description": "search by name",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "ordering",
+                  "value": "price",
+                  "description": "ordering ",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "ordering",
+                  "value": "-price",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "category_id",
+                  "value": "1",
+                  "description": "filter by category id",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "supplier_id",
+                  "value": "1",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "price",
+                  "value": "560",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "price__gte",
+                  "value": "1000",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "price__lte",
+                  "value": "1000",
+                  "type": "text",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "products-trash",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{access_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{url}}/api/products/trash/",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "api",
+                "products",
+                "trash",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "restore-trash-product",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{access_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{url}}/api/products/10/restore/",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "api",
+                "products",
+                "10",
+                "restore",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "add-product",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{access_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"jawal\",\r\n  \"price\": \"2200.00\",\r\n  \"category_id\": 1\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/api/products/",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "api",
+                "products",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "soft-delete-product",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{access_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{url}}/api/products/10/",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "api",
+                "products",
+                "10",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "force-delete-product",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{access_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{url}}/api/products/9/force_delete/",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "api",
+                "products",
+                "9",
+                "force_delete",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "change-image",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "ProductSuppliers",
+      "item": [
+        {
+          "name": "add-product-suppliers",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{access_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"product_id\": 10,\r\n  \"supplier_id\": 2,\r\n  \"cost_price\": \"50.00\",\r\n  \"lead_time_days\": 5\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/api/product-suppliers/",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "api",
+                "product-suppliers",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "update-product-suppliers",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{access_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"product_id\": 10,\r\n  \"supplier_id\": 2,\r\n  \"cost_price\": \"60.00\",\r\n  \"lead_time_days\": 5\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/api/product-suppliers/2/",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "api",
+                "product-suppliers",
+                "2",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "delete-product-suppliers",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{access_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{url}}/api/product-suppliers/2/",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "api",
+                "product-suppliers",
+                "2",
+                ""
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Dashboard",
+      "item": [
+        {
+          "name": "dashboard",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
